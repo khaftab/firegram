@@ -2,17 +2,15 @@ import * as firebase from "firebase";
 import "firebase/storage";
 import "firebase/firestore";
 
-var firebaseConfig = {
-  apiKey: "AIzaSyDgnhOy1-cvN8WMOpw8i5fRHxLqV1MrPuE",
-  authDomain: "ninja-firegram-706f5.firebaseapp.com",
-  databaseURL: "https://ninja-firegram-706f5.firebaseio.com",
-  projectId: "ninja-firegram-706f5",
-  storageBucket: "ninja-firegram-706f5.appspot.com",
-  messagingSenderId: "854401908944",
-  appId: "1:854401908944:web:bd70755c4d410dd71e9ed5",
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+const firebaseConfig = firebase.initializeApp({
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_FIREBASE_DATABASE_URL,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+});
 
 const projectStorage = firebase.storage();
 const projectFirestore = firebase.firestore();

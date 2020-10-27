@@ -8,7 +8,12 @@ function ProgressBar({ file, setFile }) {
   url && setFile(null);
   return (
     <div>
-      <Progressbars now={progress} label={`${progress}%`} animated />
+      <Progressbars
+        now={progress}
+        label={`${progress}%`}
+        animated
+        className="my-3"
+      />
     </div>
   );
 }
